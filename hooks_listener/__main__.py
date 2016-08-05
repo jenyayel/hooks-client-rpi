@@ -6,7 +6,7 @@ from __future__ import print_function
 import os
 import sys
 import signal
-from lib.mq_client.client import Client
+from lib.queue_listener.client import Client
 
 def main():
     """main entry point to application"""

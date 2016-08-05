@@ -9,7 +9,7 @@ import sys
 import signal
 import argparse
 import time
-from lib.mq_client.client import Client
+from lib.queue_listener.client import Client
 
 # Deafults
 LOG_FILENAME = "/tmp/hooks-client-rpi.log"
