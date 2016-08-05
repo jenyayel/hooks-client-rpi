@@ -1,0 +1,19 @@
+language: python
+python:
+  - "2.7"
+cache:
+  directories:
+    - $HOME/.pip-cache/
+install:
+  - pip install -r requirements.txt --cache-dir $HOME/.pip-cache
+  - pip install -r requirements-test.txt --cache-dir $HOME/.pip-cache
+env:
+  global:
+    - PYTHONPATH=$PYTHONPATH:$(pwd)
+script:
+  - pylint lib/ tests/ hooks_listener/ --msg-template='[{msg_id}]({line}) {msg}'
+  - python -m unittest discover tests/
+branches:
+  only:
+    - master
+    - dev
