@@ -1,0 +1,11 @@
+{
+    "version": "0.1.0",
+    "command": "python",
+    "args": ["hooks_listener"],
+    "options": {
+        "env": {
+            "PYTHONPATH" : "${workspaceRoot}"
+        }
+    }
+}
+

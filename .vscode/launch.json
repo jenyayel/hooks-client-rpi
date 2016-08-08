@@ -5,8 +5,11 @@
             "name": "Python",
             "type": "python",
             "request": "launch",
-            "stopOnEntry": true,
+            "stopOnEntry": false,
             "program": "${workspaceRoot}\\hooks_listener\\__main__.py",
+            "env": {
+                "PYTHONPATH": "${workspaceRoot}"
+            },
             "debugOptions": [
                 "WaitOnAbnormalExit",
                 "WaitOnNormalExit",

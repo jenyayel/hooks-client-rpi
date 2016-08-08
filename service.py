@@ -50,23 +50,23 @@ sys.stderr = EnttoiLogger(LOGGER, logging.ERROR)
 
 # get configuration of gateway from passed arguments
 PARSER = argparse.ArgumentParser(description="Hooks Client RPi service")
-PARSER.add_argument("-e", "--endpoint", help="endpoint address")
-PARSER.add_argument("-t", "--token", help="authorization token")
+PARSER.add_argument("-n", "--namespace", help="namespace of service bus")
+PARSER.add_argument("-k", "--key", help="shared access key")
 ARGS = PARSER.parse_args()
 
-END_POINT = ""
-CLIENT_TOKEN = ""
+HCR_SBS_NAMESPACE = ""
+HCR_SBS_ACCESS_KEY = ""
 if ARGS.endpoint:
-    END_POINT = ARGS.endpoint
+    HCR_SBS_NAMESPACE = ARGS.namespace
 if ARGS.token:
-    CLIENT_TOKEN = ARGS.token
+    HCR_SBS_ACCESS_KEY = ARGS.key
 
-if not END_POINT or not CLIENT_TOKEN:
-    print("Endpoint or/and client token not specified")
+if not HCR_SBS_NAMESPACE or not HCR_SBS_ACCESS_KEY:
+    print("Namespace or access key are not specified")
     sys.exit(1)
 
 # start client and handle stop
-CLN = Client(END_POINT, CLIENT_TOKEN)
+CLN = Client(HCR_SBS_NAMESPACE, HCR_SBS_ACCESS_KEY)
 CLN.start()
 
 

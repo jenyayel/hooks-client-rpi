@@ -11,20 +11,20 @@ from lib.service_bus_client.client import Client
 def main():
     """main entry point to application"""
 
-    end_point = ""
-    client_token = ""
+    sbs_namespace = ""
+    access_key = ""
 
-    if "HOOKSCLIENTRPI_ENDPOINT" in os.environ:
-        end_point = os.environ["HOOKSCLIENTRPI_ENDPOINT"]
+    if "HCR_SBS_NAMESPACE" in os.environ:
+        sbs_namespace = os.environ["HCR_SBS_NAMESPACE"]
 
-    if "HOOKSCLIENTRPI_TOKEN" in os.environ:
-        client_token = os.environ["HOOKSCLIENTRPI_TOKEN"]
+    if "HCR_SBS_ACCESS_KEY" in os.environ:
+        access_key = os.environ["HCR_SBS_ACCESS_KEY"]
 
-    if not end_point or not client_token:
-        print("Endpoint or/and client token not specified")
+    if not sbs_namespace or not access_key:
+        print("Namespace or shared access key are not specified")
         sys.exit(1)
 
-    clnt = Client(end_point, client_token)
+    clnt = Client(sbs_namespace, access_key)
     print("Hit 'Enter' or 'Ctr+C' to exit...\n")
 
     # handle graceful shutdown of mq consumer

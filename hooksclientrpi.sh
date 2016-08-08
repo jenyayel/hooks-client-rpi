@@ -24,7 +24,7 @@ PIDFILE=/var/run/$DAEMON_NAME.pid
 
 # pass configurations to client
 . /etc/environment
-DAEMON_OPTS="-e $HOOKSCLIENTRPI_ENDPOINT -t $HOOKSCLIENTRPI_TOKEN"
+DAEMON_OPTS="-n $HCR_SBS_NAMESPACE -k $HCR_SBS_ACCESS_KEY"
 
 # currently the ugly but working way to update the client on start
 update_client() {

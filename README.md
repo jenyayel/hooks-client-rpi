@@ -23,8 +23,8 @@ sudo visudo
 ```
 then add:
 ```bash
-Defaults	env_keep +="HOOKSCLIENTRPI_ENDPOINT"
-Defaults	env_keep +="HOOKSCLIENTRPI_TOKEN"
+Defaults	env_keep +="HCR_SBS_NAMESPACE"
+Defaults	env_keep +="HCR_SBS_ACCESS_KEY"
 ```
 
 Deploy the `/` folder into Raspberry Pi and start client from terminal:
