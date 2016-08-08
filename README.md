@@ -11,8 +11,8 @@ The only prerequisite is to have environment variables which defines the endpoin
 
 Those can be defined either simply in `/etc/environment`:
 ```bash
-HOOKSCLIENTRPI_ENDPOINT="[endpoint URI]"
-HOOKSCLIENTRPI_TOKEN="[authorization token]"
+HCR_SBS_NAMESPACE="[namespace of Service Bus]"
+HCR_SBS_ACCESS_KEY="[shared access key]"
 ```
 
 ## Running as shell application
